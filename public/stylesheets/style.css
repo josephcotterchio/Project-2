@@ -1,8 +1,23 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: -200px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.band {
+  background-image: url(/stylesheets/band.jpg);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 420px;
+  image-resolution: 600dpi;
 }
