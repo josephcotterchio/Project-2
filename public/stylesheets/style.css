@@ -11,11 +11,7 @@ a {
 .band {
   background-image: url(/stylesheets/band.jpeg);
 
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: cover;
+  background-position: fill;
   background-repeat: no-repeat;
   background-size: cover;
 }
