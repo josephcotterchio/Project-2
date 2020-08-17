@@ -14,6 +14,7 @@ const songsSchema = new Schema({
 });
 
 AlbumsModel = mongoose.model('Albums', albumsSchema);
+SongsModel = mongoose.model('Songs', songsSchema);
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
