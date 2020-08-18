@@ -16,7 +16,7 @@ function newAlbum(req, res) {
   res.render('albums/new', { title: 'Add Album' });
 }
 
-  const album = new Album(req.body);
+  const album = new Album(req, res);
   album.save(function (err) {
     // one way to handle errors
     if (err) return res.redirect('/albums/new');
