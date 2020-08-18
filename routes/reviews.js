@@ -1,7 +1,7 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var reviewsCtrl = require('../controllers/reviews');
+var reviewsCtrl = require("../controllers/reviews");
 
-router.post('/albums/:id/reviews', reviewsCtrl.create);
+router.post("/albums/:id/reviews", reviewsCtrl.create);
 
 module.exports = router;
