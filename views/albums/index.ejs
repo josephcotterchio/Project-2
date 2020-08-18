@@ -6,6 +6,23 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <table id="list">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Release<br>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% albums.forEach(function(a) { %>
+      <tr>
+        <td><%= a.title %></td>
+        <td><%= a.releaseYear %></td>
+        <td><a href="/albums/<%= a._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 </body>
 </html>

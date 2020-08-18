@@ -1,14 +1,32 @@
 const Album = require("../models/album");
-const Song = require("../models/album");
 
-function album(req, res) {
-  res.render('albums/album');
+function index(req, res) {
+  Album.find({}, function (err, albums) {
+    res.render('movies/index', { title: 'All Albums', albums });
+  });
 }
-function song(req, res) {
-  res.render('albums/song');
+
+function show(req, res) {
+  Album.findById(req.params.id, function (err, album) {
+    res.render('albums/show', { title: 'Album Detail', album });
+  });
 }
+
+function newAlbum(req, res) {
+  res.render('albums/new', { title: 'Add Album' });
+}
+
+  const album = new Album(req.body);
+  album.save(function (err) {
+    // one way to handle errors
+    if (err) return res.redirect('/albums/new');
+    console.log(album);
+    // for now, redirect right back to new.ejs
+    res.redirect('/albums');
+  });
 
 module.exports = {
-  album,
-  song
+  index,
+  show,
+  new: newAlbum
 };

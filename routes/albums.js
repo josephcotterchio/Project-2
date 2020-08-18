@@ -1,29 +1,10 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const mongoose = require('mongoose');
-var albumsCtrl = require("../controllers/albums");  //
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+var albumsCtrl = require('../controllers/albums');
 
-const albumsSchema = new Schema ({
-  name: String,
-});
-
-const songsSchema = new Schema({
-  name: String,
-  albums: [albumsSchema],
-});
-
-AlbumsModel = mongoose.model('Albums', albumsSchema);
-SongsModel = mongoose.model('Songs', songsSchema);
-
-/* GET users listing. */
-router.get('/', async function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-router.get("/:num", function (req, res) {
-  res.send("Hey, you selected album #" + req.params.num)
-})
+router.get('/', albumsCtrl.index);
+router.get('/new', albumsCtrl.new);
+router.get('/:id', albumsCtrl.show);
 
 module.exports = router;
-

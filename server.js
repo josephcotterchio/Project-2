@@ -7,6 +7,7 @@ require("./config/database");
 
 var indexRouter = require('./routes/index');
 var albumsRouter = require('./routes/albums');
+var reviewsRouter = require('./routes/reviews');
 
 var app = express();
 
