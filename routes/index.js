@@ -1,8 +1,13 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
 
-router.get("/", function (req, res, next) {
-  res.redirect("/");
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index');
+});
+
+router.get('/index', function (req, res, next) {
+  res.render('albums/new');
 });
 
 module.exports = router;
