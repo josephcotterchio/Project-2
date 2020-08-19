@@ -17,8 +17,16 @@ a {
   z-index: -1;
 }
 .cover {
-  background-image: url(/stylesheets/Band2.jpeg);
-    background-position: center;
+  background-image: url(/stylesheets/band2.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.cover1 {
+  background-image: url(/stylesheets/band3.jpeg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
