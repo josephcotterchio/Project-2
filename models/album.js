@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const reviewSchema = new Schema(
+  { 
+    rating: Number, 
+    content: String 
+  });
 
 const albumSchema = new Schema(
   {
@@ -14,10 +19,14 @@ const albumSchema = new Schema(
         return new Date().getFullYear();
       },
     },
+    reviews: [reviewSchema],
+    
   },
   {
     timestamps: true,
   }
 );
+
+
 
 module.exports = mongoose.model("Album", albumSchema);

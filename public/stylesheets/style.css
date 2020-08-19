@@ -6,12 +6,19 @@ body {
   color: white;
 }
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .band {
   background-image: url(/stylesheets/band.jpeg);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.cover {
+  background-image: url(/stylesheets/band.jpeg);
+    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
