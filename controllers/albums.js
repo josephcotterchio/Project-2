@@ -29,7 +29,6 @@ const album = new Album(req.body);
   album.save(function (err) {
  // one way to handle errors
 if (err) return res.redirect("/albums");
-//     // for now, redirect right back to new.ejs
   res.redirect("/albums");
 });
  }
