@@ -6,6 +6,7 @@ const albumSchema = new Schema(
     title: {
       type: String,
       required: true,
+      albumArt: String,
     },
     releaseYear: {
       type: Number,

@@ -1,10 +1,11 @@
 const Album = require("../models/album");
+const { post } = require("../routes");
 
 module.exports = {
   index,
   show,
   new: newAlbum,
-  create,
+  create
 };
 
 function index(req, res) {
@@ -20,16 +21,15 @@ function show(req, res) {
 }
 
 function newAlbum(req, res) {
-  res.render("albums/new", { title: "Add Album" });
+  res.redirect("albums/show", { title: "Add Album" });
 }
 
 function create(req, res) {
-  const album = new Album(req.body);
+const album = new Album(req.body);
   album.save(function (err) {
-    // one way to handle errors
-    if (err) return res.redirect("/albums/new");
-    console.log(album);
-    // for now, redirect right back to new.ejs
-    res.redirect("/albums");
-  });
-}
+ // one way to handle errors
+if (err) return res.redirect("/albums");
+//     // for now, redirect right back to new.ejs
+  res.redirect("/albums");
+});
+ }
