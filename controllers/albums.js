@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
   Album.find({}, function (err, albums) {
-    res.render("albums/index", { title: "All Albums", albums });
+    res.render("albums/index", { title: "Albums", albums });
   });
 }
 
