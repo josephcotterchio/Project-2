@@ -1,13 +1,6 @@
 const Album = require("../models/album");
 const { post } = require("../routes");
 
-module.exports = {
-  index,
-  show,
-  new: newAlbum,
-  create
-};
-
 function index(req, res) {
   Album.find({}, function (err, albums) {
     res.render("albums/index", { title: "Albums", albums });
@@ -31,4 +24,11 @@ const album = new Album(req.body);
 if (err) return res.redirect("/albums");
   res.redirect("/albums");
 });
- }
+ };
+
+ module.exports = {
+   index,
+   show,
+   new: newAlbum,
+   create,
+ };
