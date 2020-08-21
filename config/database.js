@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://joecotterchio@gmail.com:GeneralAssembly1!@cluster0.0btoh.azure.mongodb.net/TWRM?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://joecotterchio:GeneralAssembly1!@cluster0.0btoh.azure.mongodb.net/TWFM?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
