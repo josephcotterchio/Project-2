@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb+srv://joecotterchio:GeneralAssembly1@cluster0.0btoh.azure.mongodb.net/sei-joe?retryWrites=true&w=majority",
+  "mongodb+srv://joecotterchio:GeneralAssembly1@cluster0.0btoh.azure.mongodb.net/test",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
