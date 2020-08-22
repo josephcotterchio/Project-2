@@ -1,12 +1,14 @@
-const MongoClient = require("mongodb").MongoClient;
-const uri ="mongodb+srv://joe:GeneralAssembly1@cluster0.wwoil.azure.mongodb.net/test";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect((err) => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+const mongoose = require("mongoose");
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // if you have other stuff in here that's totally cool
+  })
+  .catch((err) => err);
 
+  mongoose.connection.on("connected", function () {
+  console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
+});
 
 const db = mongoose.connection;
 db.on("connected", function () {
@@ -16,3 +18,5 @@ db.on("connected", function () {
 db.on("err", function () {
   console.log("Mongo has thrown an error", err);
 });
+
+module.exports = mongoose;
