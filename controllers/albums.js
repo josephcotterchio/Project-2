@@ -3,7 +3,7 @@ const { post } = require("../routes");
 
 function index(req, res) {
   Album.find({}, function (err, albums) {
-    res.render("albums/index", { title: "Albums", albums });
+    res.render("albums/index", {link: "https://i.imgur.com/j83Akn6.jpg",  title: "Albums", albums });
   });
 }
 
@@ -14,7 +14,7 @@ function show(req, res) {
 }
 
 function newAlbum(req, res) {
-  res.render("albums/new", { title: "Add Album" });
+  res.render("albums/new", {link: "https://i.imgur.com/j83Akn6.jpg", title: "Add Album" });
 }
 
 function create(req, res) {
