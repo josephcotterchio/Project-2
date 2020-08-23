@@ -14,7 +14,7 @@ function show(req, res) {
 }
 
 function newAlbum(req, res) {
-  res.render("albums/new", {link: "https://i.imgur.com/j83Akn6.jpg", title: "Add Album" });
+  res.render("albums/new", {link: "https://i.imgur.com/j83Akn6.jpg", title: "Add Album", albums });
 }
 
 function create(req, res) {
