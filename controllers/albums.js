@@ -14,7 +14,7 @@ function show(req, res) {
 }
 
 function newAlbum(req, res) {
-  res.redirect("albums/show", { title: "Add Album" });
+  res.render("albums/new", { title: "Add Album" });
 }
 
 function create(req, res) {
@@ -22,7 +22,7 @@ const album = new Album(req.body);
   album.save(function (err) {
  // one way to handle errors
 if (err) return res.redirect("/albums");
-  res.redirect("/albums");
+  res.redirect("/show");
 });
  };
 
